@@ -1,0 +1,47 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        {{> content-header title="Archive"}} {{> scripts}}
+        <div class="content-body">
+            <div class="row archive-items">
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card-icon-br {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: white;
+    }
+</style>
+
+<script>
+    function loadArchive() {
+        $.getJSON("/admin/api/archive", function (data) {
+            console.log(data)
+
+            data.archives.forEach(item => {
+                var html = '';
+                html = html + '<div class="col-sm-1">';
+                html = html + '<div class="card">';
+                html = html + '  <a href="/admin/monitor-chat/?id=' + item.id + '">';
+                html = html + '    <img class="card-img-top" src="' + item.url + '" />';
+
+                if (item.live == true) {
+                    html = html + '<span class="card-icon-br text-danger ficon ft-user"></span>';
+                }
+
+                html = html + '  </a>';
+                html = html + '</div>';
+                html = html + '</div>';
+
+                $('.archive-items').append(html);
+            })
+        })
+    }
+    $(document).ready(function () {
+        loadArchive()
+    })
+</script>

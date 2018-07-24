@@ -1,0 +1,24 @@
+{
+    "rules": [{
+        "pathname": "/ws",
+        "dest": "http://localhost:3001"
+    }, {
+        "pathname": "/classifier",
+        "dest": "http://localhost:3005"
+    }, {
+        "pathname": "/match**",
+        "dest": "http://localhost:3003"
+    }, {
+        "pathname": "/admin/api/**",
+        "dest": "http://localhost:3003"
+    }, {
+        "pathname": "/monitor/**",
+        "dest": "http://localhost:3002"
+    }, {
+        "pathname": "/admin**",
+        "dest": "http://localhost:3006"
+    }, {
+        "pathname": "/**",
+        "dest": "http://localhost:3004"
+    }]
+}

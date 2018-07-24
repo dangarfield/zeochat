@@ -1,0 +1,108 @@
+<style>
+    .live-guests .col-sm-1 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .live-guests .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .live-guests .card {
+        margin-bottom: 10px;
+    }
+
+    .card-icon-bl {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: white;
+    }
+
+    .card-icon-br {
+        position: absolute;
+        right: 0;
+        top: 14px;
+        background: white;
+    }
+</style>
+<div class="live-guests">
+</div>
+<script>
+    function chunk(arr, size) {
+        var arr2 = arr.slice(0),
+            arrays = [];
+        while (arr2.length > 0) {
+            arrays.push(arr2.splice(0, size));
+        }
+        return arrays;
+    }
+
+    function showLiveGuests() {
+        console.log('Show live guests');
+        $('.live-guests').empty();
+
+        $.getJSON("/admin/api/live-guests", function (data) {
+            console.log(data);
+            var items = [];
+            $.each(data.guests, function (key, val) {
+
+                var html = '';
+                html = html + '<div class="col-sm-1">';
+                html = html + '<div class="card">';
+                html = html + '  <a href="/admin/monitor-chat/?id=' + val._id + '">';
+                html = html + '    <img class="card-img-top" src="' + val.image + '" />';
+
+                if (val.gender) {
+                    if (val.gender == 'Male') {
+                        html = html + '<span class="card-icon-bl text-muted fa fa-male"></span>';
+                    } else {
+                        html = html + '<span class="card-icon-bl text-danger fa fa-female"></span>';
+                    }
+                }
+                if (val.nsfw) {
+                    if (val.nsfw < 0.33) {
+                        html = html + '<span class="card-icon-br text-muted fa fa-star-o"></span>';
+                    } else if (val.nsfw < 0.66) {
+                        html = html + '<span class="card-icon-br text-primary fa fa-star-half-o"></span>';
+                    } else {
+                        html = html + '<span class="card-icon-br text-danger fa fa-star"></span>';
+                    }
+                }
+
+                html = html + '  </a>';
+                html = html + '</div>';
+                html = html + '</div>';
+
+                console.log(html);
+                items.push(html);
+            });
+            console.log(items);
+            var chunked = chunk(items, 12);
+            console.log(chunked);
+            var html2 = '';
+            $.each(chunked, function (key2, chunk) {
+                html2 = html2 + '<div class="row">';
+                $.each(chunk, function (key3, item) {
+                    html2 = html2 + item;
+                    // Temporarily adding multiple images
+                    i = 200
+                    while (i <= 50) {
+                        html2 = html2 + item;
+                        i++;
+                    }
+                })
+                html2 = html2 + '</div>';
+            })
+
+            $('.live-guests').append(html2);
+        });
+    }
+
+    if ($('.live-guests').length > 0) {
+        showLiveGuests();
+        //var interval = setInterval(showLiveGuests, 5000);
+    }
+
+</script>

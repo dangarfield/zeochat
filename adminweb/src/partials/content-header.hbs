@@ -1,0 +1,19 @@
+<div class="content-header-left col-md-6 col-12 mb-2">
+    <h3 class="content-header-title mb-0">{{title}}</h3>
+    <div class="row breadcrumbs-top">
+        <div class="breadcrumb-wrapper col-12">
+            <ol class="breadcrumb">
+                {{#if root }}
+                    <li class="breadcrumb-item active">{{title}}
+                    </li>
+                {{else}}
+                    <li class="breadcrumb-item">
+                        <a href="/admin">Console</a>
+                    </li>
+                    <li class="breadcrumb-item active">{{title}}
+                    </li>
+                {{/if}}
+            </ol>
+        </div>
+    </div>
+</div>

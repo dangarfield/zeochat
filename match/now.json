@@ -1,0 +1,16 @@
+{
+    "name": "zeochat-match",
+    "alias": "zeochat-match",
+    "type": "npm",
+    "env": {
+        "ZEOCHAT_PORT_MATCH": "80",
+        "ZEOCHAT_DB_CONNECTION": "@zeochat_db_connection",
+        "ZEOCHAT_DB_NAME": "zeochat",
+        "ZEOCHAT_S3_BUCKET_ASSETS": "zeochat-assets",
+        "ZEOCHAT_S3_ACCESS": "@zeochat_s3_access",
+        "ZEOCHAT_S3_SECRET": "@zeochat_s3_secret",
+        "ZEOCHAT_PAPERTRAIL_HOST_X": "@zeochat_papertrail_host",
+        "ZEOCHAT_PAPERTRAIL_PORT_X": "@zeochat_papertrail_port",
+        "ZEOCHAT_PAPERTRAIL_APP_X": "zeochat-match"
+    }
+}

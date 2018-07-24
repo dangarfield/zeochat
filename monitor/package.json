@@ -1,0 +1,19 @@
+{
+  "name": "zeochat-monitor",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.250.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "winston": "^2.4.2",
+    "winston-papertrail": "^1.0.5"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "node monitor.js",
+    "deploy": "now --public --token $NOW_TOKEN_MONITOR && now alias --token $NOW_TOKEN_MONITOR && NOW_TOKEN=${NOW_TOKEN_MONITOR} now-pipeline-prune && now ls zeochat-monitor --token $NOW_TOKEN_MONITOR"
+  }
+}

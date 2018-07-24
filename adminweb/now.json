@@ -1,0 +1,6 @@
+{
+    "name": "zeochat-adminweb",
+    "alias": "zeochat-adminweb",
+    "type": "static",
+    "env": {}
+}

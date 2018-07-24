@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a data-action="expand">
+                        <i class="ft-maximize"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content" aria-expanded="true">
+        <div class="card-body">
+            <pre class="language-json">
+            <code class="language-json status-code">
+            </code>
+        </pre>
+        </div>
+    </div>
+</div>
+<script>
+    function loadStatus() {
+        $.getJSON("/admin/api/status", function (data) {
+            delete data.action
+            console.log(data)
+            $('.status-code').html(JSON.stringify(data, null, 2))
+            Prism.highlightAll();
+        })
+    }
+    $(document).ready(function () {
+        loadStatus()
+        var interval = setInterval(loadStatus, 5000);
+    })
+</script>

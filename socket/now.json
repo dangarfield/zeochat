@@ -1,0 +1,14 @@
+{
+    "name": "zeochat-socket",
+    "alias": "zeochat-socket",
+    "type": "npm",
+    "env": {
+        "ZEOCHAT_DB_CONNECTION": "@zeochat_db_connection",
+        "ZEOCHAT_DB_NAME": "zeochat",
+        "ZEOCHAT_BASE_HTTP": "https://zeochat.now.sh",
+        "ZEOCHAT_PORT_SOCKET": "80",
+        "ZEOCHAT_PAPERTRAIL_HOST": "@zeochat_papertrail_host",
+        "ZEOCHAT_PAPERTRAIL_PORT_X": "@zeochat_papertrail_port",
+        "ZEOCHAT_PAPERTRAIL_APP_X": "zeochat-socket"
+    }
+}

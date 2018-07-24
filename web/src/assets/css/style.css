@@ -1,0 +1,447 @@
+.comingsoonOne,
+.comingsoonFlat {
+  background-image: url('/img/background/dark-walking.jpg');
+}
+
+body.vertical-layout.vertical-menu.menu-collapsed .content,
+body.vertical-layout.vertical-menu.menu-collapsed .footer,
+body.vertical-layout.vertical-menu.menu-collapsed .navbar .navbar-container {
+  margin-left: 0;
+}
+
+.still {
+  display: none;
+}
+
+.interests {
+  min-height: 27px;
+}
+
+.interests .badge {
+  margin: 0 0.25rem;
+  cursor: pointer;
+}
+
+.join-buttons {
+  padding-top: 10px;
+}
+
+.chat-application .chats .time {
+  margin: 0 0 15px 0;
+}
+
+.countdown button {
+  margin-left: 10px;
+}
+
+.chat-application .media-list {
+  padding: 15px 0 0;
+}
+
+.media-list .media {
+  padding: 0 15px 15px;
+}
+
+video {
+  background-color: black;
+}
+
+.chat-component {
+  display: none;
+}
+
+/*.chat-application .users-list-padding {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }*/
+
+.sidebar {
+  position: relative;
+  width: 100%;
+}
+
+/*@media (min-width: 992px) {*/
+
+.sidebar {
+  vertical-align: top;
+  width: 300px;
+}
+
+/*}*/
+
+.sidebar-fixed {
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
+}
+
+/*@media (min-width: 992px) {*/
+
+.sidebar-left {
+  float: left;
+}
+
+.sidebar-right {
+  float: right;
+}
+
+.header-navbar .navbar-header .navbar-brand {
+  padding: 11px 0;
+}
+
+.header-navbar .navbar-header .navbar-brand .brand-text {
+  font-family: 'Advent Pro';
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  line-height: 32px;
+  vertical-align: top;
+  padding-left: 5px;
+}
+
+.home-logo {
+  padding-bottom: 30px;
+}
+
+.homepage-cards {
+  padding: 1.8rem;
+}
+
+.hide {
+  display: none;
+}
+
+/** SPINNER **/
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #E91E63;
+  margin: auto auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.88);
+  -webkit-animation-duration: 0.35s;
+  animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  /* Modifiers */
+  /* States */
+}
+
+.modal__dialog {
+  position: relative;
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.modal__wide {
+  width: 300px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  color: #ccc;
+  background-color: transparent;
+  background-image: none;
+}
+
+.modal__close:focus {
+  outline: 0;
+}
+
+.modal__header {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.modal__title {
+  margin: 0 0 15px;
+}
+
+.modal__content {
+  padding: 10px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.modal__footer {
+  padding-top: 20px;
+  border-top: 1px solid #e2e2e2;
+  text-align: right;
+}
+
+.modal--fullscreen {
+  padding: 5px;
+}
+
+.modal--fullscreen .modal__dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  border-radius: 0;
+}
+
+.modal.is-modal-active {
+  display: flex;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px)
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg)
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+  }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+/** MOVING TYPE **/
+
+.neochat-title {
+  font-family: 'Advent Pro';
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 32px;
+  vertical-align: top;
+}
+
+.home-logo-icon {
+  height: 75px;
+  padding-right: 10px;
+}
+
+.moving-title {
+  color: #fff;
+  padding: 10px 0 30px 0;
+}
+
+.moving-title .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.moving-title .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.moving-title .line1 {
+  top: 0;
+  left: 0;
+}
+
+.moving-title .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+/** WATERMARK **/
+
+.media.remote .media-body {
+  position: relative;
+}
+
+.media.remote .media-body .watermark {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 0 0 10px 5px;
+  /* padding: 5px 5px; */
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+.neochat-watermark {
+  padding-left: 5px;
+  font-family: 'Advent Pro';
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 32px;
+  vertical-align: top;
+  color: #fff;
+}
+
+/** MEDIA SIZING **/
+
+@media (min-width: 0px) {
+  .sidebar-left {
+    float: none;
+    position: none;
+    overflow: visible;
+    height: auto;
+    width: 100%;
+  }
+  .sidebar {
+    width: inherit;
+    position: none;
+  }
+  .sidebar-fixed {
+    position: none;
+  }
+  body .content-right {
+    width: 100%;
+    height: inherit !important;
+  }
+  .media.local {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+  }
+  video.remote {
+    max-height: 300px;
+    background: white;
+  }
+  .chat-application .chats .time {
+    margin-bottom: 25px;
+    margin-left: 75px;
+  }
+  .chat-application .chat-app-window {
+    height: calc(100% - 70px);
+  }
+  .footer {
+    display: none !important;
+  }
+  .chat-application .chat-app-form {
+    padding: 15px 0;
+  }
+  .chat-app-input button .text {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  body .content-right {
+    width: calc(100% - 430px);
+    float: right;
+  }
+  .sidebar {
+    vertical-align: top;
+    width: 430px;
+  }
+  video.remote {
+    height: 300px;
+  }
+  .media.local {
+    position: absolute;
+    top: 330px;
+    bottom: 88px;
+    left: 0;
+    width: 100%;
+    /*background-color:#9ACD32;*/
+  }
+  .sidebar-left {
+    width: inherit;
+  }
+  .sidebar-fixed {
+    overflow: hidden;
+  }
+  body .content-right {
+    display: inherit;
+  }
+  .h-100-d {
+    height: 100% !important;
+  }
+  .footer {
+    display: inherit !important;
+  }
+  .chat-app-input button .text {
+    display: inline;
+  }
+  .chat-application .chats .time {
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  body .content-right {
+    width: calc(100% - 630px);
+    float: right;
+  }
+  .sidebar {
+    vertical-align: top;
+    width: 630px;
+  }
+  video.remote {
+    height: inherit;
+    max-height: 450px;
+  }
+  .media.local {
+    position: absolute;
+    top: 480px;
+    bottom: 88px;
+    left: 0;
+    width: 100%;
+    /*background-color:#9ACD32;*/
+  }
+  .sidebar-fixed {
+    overflow: hidden;
+  }
+}

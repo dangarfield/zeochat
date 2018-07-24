@@ -1,0 +1,53 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        {{> content-header title="Feedback"}} {{> scripts}}
+        <div class="content-body">
+            <div class="row feedback-items">
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card-icon-br {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: white;
+    }
+</style>
+
+<script>
+    function loadFeedback() {
+        $.getJSON("/admin/api/feedback", function (data) {
+            console.log(data)
+
+            data.feedback.forEach(item => {
+                var html = '';
+                html = html + '<div class="col-sm-3">';
+                html = html + '<div class="card">';
+                html = html + '<div class="card-body">';
+                html = html + '  <h4 class="card-title">' + item.date + '</h4>';
+                html = html + '  <p class="card-text">' + item.text + '</p>';
+                html = html + '  <button class="btn btn-outline-amber remove" data-url="/admin/api/remove-feedback/' + item._id + '">';
+                html = html + '    Remove'
+                html = html + '  </button>';
+                html = html + '</div>';
+                html = html + '</div>';
+                html = html + '</div>';
+                $('.feedback-items').append(html);
+            })
+            $('.remove').click(function () {
+                var url = $(this).attr('data-url')
+                console.log('remove url', url)
+                $.getJSON(url, function (data) {
+                    window.location.reload()
+                })
+            })
+        })
+
+    }
+    $(document).ready(function () {
+        loadFeedback()
+    })
+</script>

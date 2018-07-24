@@ -1,0 +1,49 @@
+<style>
+    .cam video {
+        width: 100%;
+    }
+
+    .history {
+        height: 464px;
+        overflow-x: scroll;
+    }
+
+    .history .guestA {
+        color: green;
+    }
+
+    .history .guestB {
+        color: blue;
+    }
+</style>
+
+
+<main class="chat-monitor container-fluid">
+    <div class="row live-chat">
+        <div class="col-5">
+            <div class="cam">
+                <video class="guestA"></video>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="cam">
+                <video class="guestB"></video>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="chat">
+                <div class="history"></div>
+                <div class="buttons">
+                    <form class="form-inline">
+                        <input type="text" class="form-control" id="msg" placeholder="Message">
+                        <button type="submit" class="btn btn-primary" id="send">
+                            <i class="fa fa-paper-plane-o"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{{> scripts}}
+<script src="/admin/js/bundle-admin.js"></script>

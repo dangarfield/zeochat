@@ -1,0 +1,29 @@
+{
+  "name": "zeochat-adminweb",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "custom-error": "^0.2.1",
+    "simple-peer": "^9.1.2",
+    "simple-websocket": "^7.0.2"
+  },
+  "devDependencies": {
+    "assemble": "^0.24.3",
+    "assemble-permalinks": "^0.6.1",
+    "fs-extra": "^6.0.1",
+    "grunt": "^1.0.2",
+    "grunt-assemble": "^0.6.3",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "gulp-extname": "^0.2.2",
+    "mixin-deep": "^1.3.1"
+  },
+  "scripts": {
+    "xbuild": "browserify js/main.js > js/bundle.js & browserify js/admin.js > js/bundle-admin.js",
+    "xinstall": "npm run build",
+    "start": "node adminweb.js",
+    "xwatch": "watchify js/main.js -o js/bundle.js -dv & watchify js/admin.js -o js/bundle-admin.js -dv",
+    "deploy": "now --static --public --token $NOW_TOKEN_WEB && now alias --token $NOW_TOKEN_WEB && NOW_TOKEN=${NOW_TOKEN_WEB} now-pipeline-prune && now ls zeochat-adminweb --token $NOW_TOKEN_WEB"
+  }
+}

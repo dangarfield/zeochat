@@ -1,0 +1,39 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        {{> content-header title="Interests"}}
+        <div class="content-body">
+            <div class="row interest-list">
+            </div>
+        </div>
+    </div>
+</div>
+{{> scripts}}
+<script>
+    function loadInterests() {
+        $('.interest-list').empty()
+        $.getJSON("/admin/api/interests", function (data) {
+            console.log('data.interests', data.interests)
+            $.each(data.interests, function (i, interest) {
+                console.log('interest', interest)
+                var html = '';
+                html = html + '<div class="col-2">';
+                html = html + '    <div class="card bg-success">';
+                html = html + '        <div class="card-content">';
+                html = html + '            <div class="card-body">';
+                html = html + '                <div class="media-body white text-right">';
+                html = html + '                    <h3 class="guest-count">' + interest._id + '</h3>';
+                html = html + '                    <span>' + interest.count + '</span>';
+                html = html + '                </div>';
+                html = html + '            </div>';
+                html = html + '        </div>';
+                html = html + '    </div>';
+                html = html + '</div>';
+                $('.interest-list').append(html)
+            })
+        })
+    }
+    $(document).ready(function () {
+        loadInterests()
+        var interval = setInterval(loadInterests, 5000);
+    })
+</script>

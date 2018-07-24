@@ -1,0 +1,12 @@
+.header-navbar .navbar-header .navbar-brand {
+    padding: 11px 0;
+}
+
+.header-navbar .navbar-header .navbar-brand .brand-text {
+    font-family: 'Advent Pro';
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: 32px;
+    vertical-align: top;
+}

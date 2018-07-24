@@ -1,0 +1,21 @@
+{
+  "name": "zeochat-match",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.276.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "hat": "0.0.3",
+    "mongodb": "^3.1.0-beta4",
+    "winston": "^2.4.2",
+    "winston-papertrail": "^1.0.5"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "node match.js",
+    "deploy": "now --public --token $NOW_TOKEN_MATCH && now alias --token $NOW_TOKEN_MATCH && NOW_TOKEN=${NOW_TOKEN_MATCH} now-pipeline-prune && now ls zeochat-match --token $NOW_TOKEN_MATCH"
+  }
+}

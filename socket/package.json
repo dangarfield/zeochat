@@ -1,0 +1,19 @@
+{
+  "name": "zeochat-socket",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "hat": "0.0.3",
+    "mongodb": "^3.1.0-beta4",
+    "winston": "^2.4.2",
+    "winston-papertrail": "^1.0.5",
+    "ws": "^3.0.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "node socket.js",
+    "deploy": "now --public --token $NOW_TOKEN_SOCKET && now alias --token $NOW_TOKEN_SOCKET && NOW_TOKEN=${NOW_TOKEN_SOCKET} now-pipeline-prune && now ls zeochat-socket --token $NOW_TOKEN_SOCKET"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "rules": [{
+        "pathname": "/ws",
+        "dest": "https://zeochat-socket.now.sh"
+    }, {
+        "pathname": "/classifier",
+        "dest": "https://zeochat-classifier.now.sh"
+    }, {
+        "pathname": "/match**",
+        "dest": "https://zeochat-match.now.sh"
+    }, {
+        "pathname": "/admin/api/**",
+        "dest": "https://zeochat-match.now.sh"
+    }, {
+        "pathname": "/monitor**",
+        "dest": "https://zeochat-monitor.now.sh"
+    }, {
+        "pathname": "/admin**",
+        "dest": "https://zeochat-adminweb.now.sh"
+    }, {
+        "pathname": "/**",
+        "dest": "https://zeochat-web.now.sh"
+    }]
+}

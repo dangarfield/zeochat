@@ -1,0 +1,60 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        {{> content-header title="Console" root="true"}}
+        <div class="content-body">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card bg-success">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="ft-activity white font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body white text-right">
+                                        <h3 class="guest-count">0</h3>
+                                        <span>Guests</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <a href="" class="reset-data">
+                        <div class="card bg-danger">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="media d-flex">
+                                        <div class="align-self-center">
+                                            <i class="ft-activity white font-large-2 float-left"></i>
+                                        </div>
+                                        <div class="media-body white text-right">
+                                            <h3>Reset Data</h3>
+                                            <span>Click to reset</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{> scripts}}
+<script>
+    function bindReset() {
+        $('.reset-data').click(function (e) {
+            e.preventDefault()
+            $.getJSON("/admin/api/remove-all-guests", function (data) {
+                console.log(data)
+                $('.reset-data .media-body span').html('Success')
+            })
+        })
+    }
+    $(document).ready(function () {
+        bindReset()
+    })
+</script>

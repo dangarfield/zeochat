@@ -1,0 +1,14 @@
+{
+  "name": "zeochat-proxy",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "now": "^11.3.0",
+    "micro-proxy": "^1.1.0"
+  },
+  "scripts": {
+    "start": "micro-proxy -r rules-local.json -p 3000",
+    "deploy": "now alias -r rules-now.json zeochat.now.sh --token $NOW_TOKEN_WEB",
+    "tunnel": "lt -p 3000 -s zeochat"
+  }
+}

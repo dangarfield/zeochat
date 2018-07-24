@@ -1,0 +1,81 @@
+{
+    "apps": [{
+        "name": "proxy",
+        "cwd": "proxy",
+        "script": "npm",
+        "args": "start",
+        "watch": true,
+        "env": {
+            "ZEOCHAT_PORT_PROXY": 3000,
+            "ZEOCHAT_PORT_SOCKET": 3001,
+            "ZEOCHAT_PORT_MONITOR": 3002,
+            "ZEOCHAT_PORT_MATCH": 3003,
+            "ZEOCHAT_PORT_WEB": 3004,
+            "ZEOCHAT_PORT_CLASSIFIER": 3005,
+            "ZEOCHAT_PORT_ADMINWEB": 3006
+        }
+    }, {
+        "name": "adminweb",
+        "cwd": "adminweb",
+        "script": "grunt",
+        "watch": ["src"],
+        "env": {
+            "ZEOCHAT_PORT_ADMINWEB": 3006
+        }
+    }, {
+        "name": "match",
+        "cwd": "match",
+        "script": "match.js",
+        "watch": true,
+        "env": {
+            "ZEOCHAT_DB_CONNECTION": "mongodb://<EXAMPLE>:<EXAMPLE>@<EXAMPLE>.mlab.com:41720/zeochat-local",
+            "ZEOCHAT_DB_NAME": "zeochat-local",
+            "ZEOCHAT_PORT_MATCH": 3003
+        }
+    }, {
+        "name": "classifier",
+        "cwd": "classifier",
+        "script": "run-docker.sh",
+        "watch": false,
+        "env": {
+            "ZEOCHAT_PORT_CLASSIFIER": 3005,
+            "ZEOCHAT_S3_BUCKET_ASSETS": "zeochat-assets",
+            "ZEOCHAT_S3_ACCESS": "<EXAMPLE>",
+            "ZEOCHAT_S3_SECRET": "<EXAMPLE>"
+        }
+    }, {
+        "name": "monitor",
+        "cwd": "monitor",
+        "script": "monitor.js",
+        "watch": true,
+        "env": {
+            "ZEOCHAT_BASE_HTTP": "http://localhost:3000",
+            "ZEOCHAT_PORT_MONITOR": 3002,
+            "ZEOCHAT_S3_BUCKET_ASSETS": "zeochat-assets",
+            "ZEOCHAT_S3_ACCESS": "<EXAMPLE>",
+            "ZEOCHAT_S3_SECRET": "<EXAMPLE>"
+        }
+    }, {
+        "name": "socket",
+        "cwd": "socket",
+        "script": "socket.js",
+        "watch": true,
+        "env": {
+            "ZEOCHAT_DB_CONNECTION": "mongodb://<EXAMPLE>:<EXAMPLE>@<EXAMPLE>.mlab.com:41720/zeochat-local",
+            "ZEOCHAT_DB_NAME": "zeochat-local",
+            "ZEOCHAT_BASE_HTTP": "http://localhost:3000",
+            "ZEOCHAT_PORT_SOCKET": 3001
+        }
+    }, {
+        "name": "web",
+        "cwd": "web",
+        "script": "grunt",
+        "watch": ["src"],
+        "env": {
+            "ZEOCHAT_PORT_WEB": 3004,
+            "ZEOCHAT_S3_BUCKET_WEB": "zeochat.com",
+            "ZEOCHAT_S3_ACCESS": "<EXAMPLE>",
+            "ZEOCHAT_S3_SECRET": "<EXAMPLE>"
+        }
+    }]
+}
