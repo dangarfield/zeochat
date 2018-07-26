@@ -14,7 +14,6 @@ This is a work in progress and test learning project for a few technologies - Mo
 - Mobile optimised
 
 ### TODO
-- all - abstract away remove secrets and keys for github
 - web - removing the ugly resizing of components when video streams are loaded for remote and local
 - admin - flag talk to next person
 - web - home page blurb and info
@@ -50,3 +49,4 @@ This is a work in progress and test learning project for a few technologies - Mo
 - ~~web - bug - addChat textcontent null~~
 - ~~web - feedback and improvements button~~
 - ~~watch admin - sort archive by live users and date~~
+- ~~all - abstract away remove secrets and keys for github~~
