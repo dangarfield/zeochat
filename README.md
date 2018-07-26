@@ -6,7 +6,7 @@
 This is a work in progress and test learning project for a few technologies - Most notable WebRTC and Ziet Now
 
 ### Highlights
-- 7 isolated services
+- 7 isolated services - web, socket, proxy, monitor, match, classifier, adminweb
 - NSFW classifier for offensive content
 - Automated blue-green deployment using Zeit Now
 - Compilation of static sites using handlebars
