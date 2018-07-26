@@ -25,6 +25,7 @@ This is a work in progress and test learning project for a few technologies - Mo
 - match - add db indexes
 - web - messaging to let people know about waiting
 - web - add mute button
+- web - mobile view, set heights, widths correctly
 
 ### TODO (Closed)
 - ~~socket - closed websockets get removed from status list~~
@@ -49,4 +50,3 @@ This is a work in progress and test learning project for a few technologies - Mo
 - ~~web - bug - addChat textcontent null~~
 - ~~web - feedback and improvements button~~
 - ~~watch admin - sort archive by live users and date~~
-- web - mobile view, set heights, widths correctly
