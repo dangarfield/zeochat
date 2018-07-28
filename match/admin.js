@@ -1,4 +1,3 @@
-const exphbs = require('express-handlebars')
 const AWS = require('aws-sdk')
 const logger = require('./logger').default
 
@@ -18,14 +17,6 @@ function checkEnvVars () {
 checkEnvVars()
 
 var s3 = new AWS.S3({accessKeyId: S3_ACCESS, secretAccessKey: S3_SECRET})
-
-function setupApp (app) {
-  app.engine('handlebars', exphbs({
-    defaultLayout: 'admin-base'
-  }))
-  app.set('view engine', 'handlebars')
-  app.disable('view cache')
-}
 
 function setupRoutes (app, dao) {
   // api
@@ -135,6 +126,5 @@ function setupRoutes (app, dao) {
 }
 exports.initAdmin = function (app, dao) {
   logger.info('Initialising Admin Functions')
-  setupApp(app)
   setupRoutes(app, dao)
 }
