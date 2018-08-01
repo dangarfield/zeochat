@@ -1,6 +1,6 @@
 {
   "name": "zeochat-web",
-  "version": "0.24.6",
+  "version": "0.25.0",
   "dependencies": {
     "animejs": "^2.2.0",
     "axios": "^0.18.0",
